@@ -52,7 +52,7 @@ gulp.task("build", gulp.series("clean", gulp.parallel("styles", "assets")));
 
 gulp.task("watch", function () {
   gulp.watch("styles/**/*.*", gulp.series("styles"));
-
+  gulp.watch("assets/templates/**/*.pug", ["pug"]);
   gulp.watch("assets/**/*.*".gulp.series("assets"));
 });
 
