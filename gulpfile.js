@@ -6,17 +6,13 @@ const del = require("del");
 const newer = require("gulp-newer");
 const autoprefixer = require("gulp-autoprefixer");
 const remember = require("gulp-remember");
-const cached = require("gulp-cached");
-const path = require("path");
 const browserSync = require("browser-sync").create();
-
 const isDevelopment =
   !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
 gulp.task("styles", function () {
   return gulp
     .src("styles/main.scss")
-    .pipe(cached("styles"))
     .pipe(autoprefixer())
     .pipe(remember("styles"))
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
