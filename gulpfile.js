@@ -8,6 +8,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const remember = require("gulp-remember");
 const cached = require("gulp-cached");
 const path = require("path");
+const browserSync = require("browser-sync").create();
 
 const isDevelopment =
   !process.env.NODE_ENV || process.env.NODE_ENV == "development";
@@ -38,13 +39,17 @@ gulp.task("assets", function () {
 gulp.task("build", gulp.series("clean", gulp.parallel("styles", "assets")));
 
 gulp.task("watch", function () {
-  gulp
-    .watch("styles/**/*.*", gulp.series("styles"))
-    .on("unlink", function (filepath) {
-      remember.forget("styles", path.resolve(filepath));
-      delete cached.caches.styles[path.resolve(filepath)];
-    });
-  gulp.watch("assets/**/*.*", gulp.series("assets"));
+  gulp.watch("styles/**/*.*", gulp.series("styles"));
+
+  gulp.watch("assets/**/*.*".gulp.series("assets"));
 });
 
-gulp.task("dev", gulp.series("build", "watch"));
+gulp.task("server", function () {
+  browserSync.init({
+    server: "public",
+  });
+
+  browserSync.watch("public/**/*.*").on("change", browserSync.reload);
+});
+
+gulp.task("dev", gulp.series("build", gulp.parallel("watch", "server")));

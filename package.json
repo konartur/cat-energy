@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/konartur/cat-energy#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
