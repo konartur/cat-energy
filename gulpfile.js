@@ -9,7 +9,7 @@ const remember = require("gulp-remember");
 const browserSync = require("browser-sync").create();
 var pug = require("gulp-pug");
 
-var dir = dir;
+var dir = "public";
 
 const isDevelopment =
   !process.env.NODE_ENV || process.env.NODE_ENV == "development";
