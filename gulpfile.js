@@ -7,6 +7,10 @@ const newer = require("gulp-newer");
 const autoprefixer = require("gulp-autoprefixer");
 const remember = require("gulp-remember");
 const browserSync = require("browser-sync").create();
+var pug = require("gulp-pug");
+
+var dir = dir;
+
 const isDevelopment =
   !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
@@ -18,18 +22,30 @@ gulp.task("styles", function () {
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass())
     .pipe(gulpIf(isDevelopment, sourcemaps.write(".")))
-    .pipe(gulp.dest("public"));
+    .pipe(gulp.dest(dir));
+});
+
+gulp.task("pug", function () {
+  return gulp
+    .src("assets/templates/**/*.pug")
+    .pipe(
+      pug({
+        // Your options in here.
+      })
+    )
+    .pipe(gulp.dest("public/html"))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("clean", function () {
-  return del("public");
+  return del(dir);
 });
 
 gulp.task("assets", function () {
   return gulp
     .src("assets/**", { since: gulp.lastRun("assets") })
-    .pipe(newer("public"))
-    .pipe(gulp.dest("public"));
+    .pipe(newer(dir))
+    .pipe(gulp.dest(dir));
 });
 
 gulp.task("build", gulp.series("clean", gulp.parallel("styles", "assets")));
@@ -42,7 +58,7 @@ gulp.task("watch", function () {
 
 gulp.task("server", function () {
   browserSync.init({
-    server: "public",
+    server: dir,
   });
 
   browserSync.watch("public/**/*.*").on("change", browserSync.reload);
