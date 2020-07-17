@@ -10,7 +10,6 @@ const imagemin = require("gulp-imagemin");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const cssnano = require("cssnano");
-const husky = require("husky");
 var ghpages = require("gh-pages");
 
 var dist = "public";
