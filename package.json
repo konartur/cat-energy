@@ -8,6 +8,11 @@
     "start": "node_modules/.bin/gulp",
     "deploy": "node_modules/.bin/cross-env NODE_ENV=production node_modules/.bin/gulp deploy"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run deploy"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/konartur/cat-energy.git"
@@ -35,7 +40,8 @@
     "gulp-remember": "^1.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "husky": "^4.2.5"
   },
   "dependencies": {}
 }
