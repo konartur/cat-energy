@@ -7,24 +7,12 @@ html(lang="en")
         link(rel="stylesheet", href="./reset.css")
         title Cat Energy
     body
-        header.header
-            .container
-                .header__navbar.navbar
-                    .navbar__logo.logo
-                        .logo__img img(src="", alt="logo")
-                        p.logo__name Cat Energy
-                    .navbar__menu.menu
-                        .menu__item.item
-                            p.item__text Главная
-                        .menu__item
-                             p.item__text Каталог продукции
-                        .menu__item
-                             p.item__text Подбор Программы
-                .header__preview.preview
-                    h1.preview__title Функциональное питание для котов
-                    p.preview__description Занялся собой? Займись котом!
-                    button.preview__button Подобрать программу
-
+       
+   .header__preview.preview
+            h1.preview__title Функциональное питание для котов
+            p.preview__description Занялся собой? Займись котом!
+            button.preview__button Подобрать программу
+            
         section.content 
             .container
                 .content__card.card
@@ -41,8 +29,9 @@ html(lang="en")
                         .card__img
                             img(src="", alt="fat-cat")
                         h2.card__title Набор массы
-                    p.card__description Заработать авторитет среди дворовых котов и даже собак?
-                                        Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
+                    p.card__description 
+                                | Заработать авторитет среди дворовых котов и даже собак?
+                                | Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
                     .card__link
                         a(href="http://#", target="_blank", rel="noopener noreferrer") Каталог Pro 	&#8594;
 
