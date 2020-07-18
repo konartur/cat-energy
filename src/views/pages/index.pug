@@ -3,5 +3,8 @@ extends ../layouts/base.pug
 block stylesheets
     link(rel="stylesheet", href="./index.min.css")
 
-block content
+block header
+    include ../blocks/header.pug
+
+block content 
     include ../blocks/header.pug
