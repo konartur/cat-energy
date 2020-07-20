@@ -31,7 +31,7 @@ gulp.task("styles", function () {
 
 gulp.task("pug", function () {
   return gulp
-    .src("src/views/pages/**/*.pug", { since: gulp.lastRun("pug") })
+    .src("src/views/pages/**/*.pug")
     .pipe(pug())
     .pipe(gulp.dest(dist))
     .pipe(browserSync.reload({ stream: true }));
@@ -41,7 +41,7 @@ gulp.task("images", function () {
   return gulp
     .src("src/images/*", { since: gulp.lastRun("images") })
     .pipe(imagemin())
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(dist + "/images"));
 });
 
 gulp.task("git-publish", function (cb) {
