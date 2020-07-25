@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"index.min.css","sourcesContent":[]}
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,WACE,gBAAiB,CACjB,aAAc,CAGhB,QACE,qBAAsB","file":"index.min.css","sourcesContent":[".container {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.header {\r\n  background-color: blue;\r\n}\r\n"]}
