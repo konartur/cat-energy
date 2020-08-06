@@ -1,14 +1,9 @@
 extends ../layouts/base.pug
 
-link(rel="stylesheet", href="/public/index.min.css")
-link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap")
-
-
-block header
-    include ../blocks/header.pug
+block stylesheets
+    link(rel="stylesheet", href="index.min.css")
 
 block content 
+    include ../blocks/header.pug
     include ../blocks/content.pug
-
-block example 
     include ../blocks/example.pug

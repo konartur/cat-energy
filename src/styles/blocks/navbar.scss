@@ -1,3 +1,14 @@
 .navbar {
-  background-color: green;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .item a {
+    text-decoration: none;
+  }
 }

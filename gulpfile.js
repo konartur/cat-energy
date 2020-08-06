@@ -11,6 +11,7 @@ const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const cssnano = require("cssnano");
 var ghpages = require("gh-pages");
+var wait = require("gulp-wait");
 
 var dist = "public";
 
@@ -19,7 +20,8 @@ const isDevelopment =
 
 gulp.task("styles", function () {
   return gulp
-    .src("src/styles/pages/*", { since: gulp.lastRun("styles") })
+    .src("src/styles/pages/*")
+    .pipe(wait(500))
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))

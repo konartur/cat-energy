@@ -38,6 +38,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-wait": "0.0.2",
     "husky": "^4.2.5"
   },
   "dependencies": {}
