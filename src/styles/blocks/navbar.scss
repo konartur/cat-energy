@@ -1,14 +1,25 @@
+.header {
+  background-image: url("/images/index-background-desktop.jpg");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 695px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
+  padding-top: 55px;
 }
 
 .menu {
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 
-  .item a {
-    text-decoration: none;
+  .item {
+    &__text {
+      text-decoration: none;
+    }
   }
 }
