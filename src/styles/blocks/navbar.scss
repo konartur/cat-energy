@@ -1,25 +1,41 @@
+@import "../variables";
+
 .header {
-  background-image: url("/images/index-background-desktop.jpg");
-  background-position: 100% 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 695px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding-top: 55px;
+
+  &__logo {
+    margin-top: 55px;
+  }
 }
 
 .menu {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background-image: url("/images/index-background-desktop.jpg");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  width: 50%;
 
-  .item {
-    &__text {
-      text-decoration: none;
-    }
+  &__item:first-child {
+    margin-left: 100px;
+  }
+
+  &__item {
+    margin-top: 75px;
+    margin-left: 35px;
+    height: 20px;
+  }
+}
+
+.item {
+  &__text {
+    color: $white-color;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }
